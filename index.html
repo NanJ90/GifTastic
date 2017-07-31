@@ -3,18 +3,48 @@
 <head lang="en">
 	<title>GifTastic</title>
 	<meta charset="utf-8">
-	<script src="http://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-	<div id="buttons-view"></div>
-	<form id="topics-form">
-      <label for="topic-input">Add some fashion and beauty brands or celebrities</label>
-      <input type="text" id="topic-input"><br>
-      <input id="add-topic" type="submit" value="Add some fashion and beauty brands or celebrities">
-    </form>
-    <div id="movies-view"></div>
+	<div class="container">	
+		<h1>Giphy</h1>	
+<!-- buttons will show here -->
+		<div id="buttons-view">
+			<button data-topic="alexander mcqueen" class="btn-info">alexander mcqueen</button>
+			<button data-topic="beauty" class="btn-info">beauty</button>
+			<button data-topic="cara delevingne" class="btn-info">cara delevingne</button>
+			<button data-topic="chanel" class="btn-info">chanel</button>
+			<button data-topic="christian dior" class="btn-info">christian dior</button>
+			<button data-topic="dress" class="btn-info">dress</button>
+			<button data-topic="emily ratajkowski" class="btn-info">emily ratajkowskiy</button>
+			<button data-topic="gucci" class="btn-info">gucci</button>
+			<button data-topic="jessica stam" class="btn-info">jessica stamy</button>			
+			<button data-topic="jewelry" class="btn-info">jewelry</button>
+			<button data-topic="jourdan dunn" class="btn-info">jourdan dunn</button>
+			<button data-topic="julia nobis" class="btn-info">julia nobis</button>
+			<button data-topic="karlie kloss" class="btn-info">karlie kloss</button>
+			<button data-topic="kate moss" class="btn-info">kate moss</button>
+			<button data-topic="kate upton" class="btn-info">kate upton</button>
+			<button data-topic="makeup" class="btn-info">makeup</button>
+			<button data-topic="marc jacobs" class="btn-info">marc jacobs</button>
+			<button data-topic="miranda kerr" class="btn-info">miranda kerr</button>
+		</div>
+		<div class= "row">
+<!-- showing gifs and ratings -->
+		    <div id="gifs-view" class="col-lg-9">
+			</div>
+	<!-- adding new tags -->
+			<div class="col-lg-3">
+				<form id="topics-form">
+			      <label for="topic-input">Add some fashion and beauty brands or celebrities</label>
+			      <input type="text" id="topic-input"><br>
+			      <input id="add-topic" type="submit" value="submit" class="btn-info">
+			    </form>
+		    </div>
+	    </div>
+	</div>
 
 
 	<script type="text/javascript" href="gif.js"></script>
