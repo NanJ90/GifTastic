@@ -20,7 +20,6 @@ var topics= [
 "miranda kerr",
 ];
 
-// function displayGifs() {
 $(document).on("click",".btn-info",function() {
 
         var topics = $(this).attr("data-topic");
@@ -42,14 +41,16 @@ $(document).on("click",".btn-info",function() {
            
                 var gif = $("<img>")
                 gif.attr("src",results[i].images.fixed_height_still.url);
-               	
+               	gif.attr("data-still",results[i].images.fixed_height_still.url);
+               	gif.attr("data-animate",results[i].embed_url);
+               	gif.attr("data-state","still");
                 topicDiv.append(p);
                 topicDiv.append(gif);
         
                 $("#gifs-view").prepend(topicDiv);
-               
-        }
-      });
+                          
+        	}
+      	});
       });
 
 function renderButtons() {
@@ -66,7 +67,6 @@ function renderButtons() {
 
 $("#topics-form").on("submit", function(event) {
         event.preventDefault();      
-        alert("hiiiii");
         var topic= $("#topic-input").val().trim();
         topics.push(topic);
 
@@ -75,3 +75,16 @@ $("#topics-form").on("submit", function(event) {
       });
      
       renderButtons();
+
+$(".gif").on("click", function() {
+ 
+      		var state = $(this).attr("data-state");
+ 
+				      if (state === "still") {
+				        $(this).attr("src", $(this).attr("data-animate"));
+				        $(this).attr("data-state", "animate");
+				      } else {
+				        $(this).attr("src", $(this).attr("data-still"));
+				        $(this).attr("data-state", "still");
+				         }
+				    });
